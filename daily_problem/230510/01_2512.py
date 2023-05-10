@@ -7,6 +7,8 @@ def input():
 N = int(input())
 m_list = list(map(int, input().split()))
 M = int(input())
+low = 1
+high = M
 now_max = (1+M) // 2
 
 while True:
@@ -18,12 +20,14 @@ while True:
         break
     elif now_total > M: 
         old_max = now_max
-        now_max = (now_max + 1) // 2
+        high = now_max
+        now_max = (now_max + low) // 2
         if old_max == now_max:
             break
     else: 
         old_max = now_max
-        now_max = (now_max + M) // 2
+        low = now_max
+        now_max = (now_max + high) // 2
         if old_max == now_max:
             break
 print(now_max)

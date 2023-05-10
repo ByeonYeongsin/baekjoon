@@ -7,19 +7,23 @@ def input():
 N = int(input())
 m_list = list(map(int, input().split()))
 M = int(input())
-m_list.sort(reverse=True)
+now_max = (1+M) // 2
 
-now_m_list = []
-for i in range(1, 100001):
-    now_m_list = m_list.copy()
-    if sum(m_list) == M:
+while True:
+    now_total = 0
+    for m in m_list:
+        if m < now_max: now_total+= m
+        else: now_total += now_max
+    if now_total == M:
         break
-    else:
-        dif, re = divmod(sum(m_list)-M, i)
-        if re != 0:
-            continue
-        for j in range(i):
-            now_m_list[j] -= dif
-        if now_m_list[i] < now_m_list[i-1]:
+    elif now_total > M: 
+        old_max = now_max
+        now_max = (now_max + 1) // 2
+        if old_max == now_max:
             break
-print(now_m_list)
+    else: 
+        old_max = now_max
+        now_max = (now_max + M) // 2
+        if old_max == now_max:
+            break
+print(now_max)

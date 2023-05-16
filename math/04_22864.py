@@ -10,7 +10,7 @@ fatigue = 0
 work = 0
 
 for _ in range(24):
-    if fatigue + A < M:
+    if fatigue + A <= M:
         work += B
         fatigue += A
     else:

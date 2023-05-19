@@ -8,6 +8,12 @@ def input():
 def check_sdk(sdk, i, j):
     return False
 
+def back(i, j):
+    if i == 9 and j == 9:
+        return
+    else
+        for k in range(9):
+            
 sdk = []
 
 for _ in range(9):

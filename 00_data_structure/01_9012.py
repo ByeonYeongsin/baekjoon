@@ -1,23 +1,46 @@
-# 9012
+# # 9012
+# import sys
+
+# def input():
+#     return sys.stdin.readline().rstrip()
+
+# N = int(input())
+# for _ in range(N):
+#     string = input()
+#     stack = []
+#     for s in string:
+#         if s == '(':
+#             stack.append(0)
+#         elif s == ')':
+#             if len(stack) == 0:
+#                 print("NO")
+#                 break
+#             stack.pop(0)
+#     else:
+#         if len(stack) == 0:
+#             print("YES")
+#         else:
+#             print("NO")
+
 import sys
 
 def input():
-    return sys.stdin.readline().rstrip()
+    return sys.stdin.readline()
 
-N = int(input())
-for _ in range(N):
-    string = input()
+T = int(input())
+for _ in range(T):
+    flag = True
+    line = input()
     stack = []
-    for s in string:
+    for s in line:
         if s == '(':
             stack.append(0)
         elif s == ')':
             if len(stack) == 0:
-                print("NO")
+                flag = False
                 break
-            stack.pop(0)
-    else:
-        if len(stack) == 0:
-            print("YES")
-        else:
-            print("NO")
+            stack.pop()
+    if len(stack) != 0: flag = False
+
+    if flag == True: print("YES")
+    else: print("NO")

@@ -24,4 +24,3 @@ for now_bracket in bracket_list:
         print(str[i])
     print("\n")
 
-# https://juhee-maeng.tistory.com/91

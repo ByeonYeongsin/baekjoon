@@ -8,7 +8,6 @@ def input():
 
 N,K = map(int, input().split())
 h = list(map(int, input().split()))
- 
 arr = []
  
 for i in range(N-1):
@@ -17,7 +16,6 @@ for i in range(N-1):
  
 arr.sort()
 cost = 0
- 
 for i in range(N-K):
     cost += arr[i]
  
